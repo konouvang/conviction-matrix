@@ -10,11 +10,9 @@ _Duration: 2 Week Sprint_
 - [Node.js](https://nodejs.org/en/)
 - [PostrgeSQL](https://www.postgresql.org/)
 - [Nodemon](https://nodemon.io/)
-2. Create a new database named `suitup`.
-3. Run the queries that are stored in the `database.sql` file to populate the tables and insert the values you'll need. [Postico](https://eggerapps.at/postico/) is recommended for running the queries.
-4. In your terminal navigate to this project and run `npm install` to install all of the necessary dependencies.
-5. Run `npm run server` to start the server 
-6. Run `npm run client` to open a new browser window.
+2. In your terminal navigate to this project and run `npm install` to install all of the necessary dependencies.
+3. Run `npm run server` to start the server 
+4. Run `npm run client` to open a new browser window.
 
 ## Usage
 1
