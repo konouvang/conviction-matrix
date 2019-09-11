@@ -12,7 +12,8 @@ import mapStateToProps from '../../redux/mapRedux/mapStateToProps';
 import './App.css';
 //pages
 import LandingPage from '../LandingPage/LandingPage';
-import DecisionInputRoot from '../DecisionInputRoot/DecisionInputRoot'
+import DecisionInputRoot from '../DecisionInputRoot/DecisionInputRoot';
+import FactorParent from '../FactorParent/FactorParent';
 
 
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
@@ -57,6 +58,11 @@ class App extends Component {
                   exact
                   path="/decision"
                   component={DecisionInputRoot}
+                />
+                <Route
+                  exact
+                  path="/factor"
+                  component={FactorParent}
                 />
 
                 {/* If none of the other routes matched, we will show a 404. */}

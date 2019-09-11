@@ -30,7 +30,8 @@ class DecisionInputRoot extends Component {
       render() {
         return (
           <div>
-          <h1>Decisions</h1>
+          <h1>Decision Item</h1>
+          <p>Decision Items are choices that this app is used for to help determine the best decision. There needs to be at least two.</p>
           <DecisionItemTwo decisions={this.state.decisions} deleteDecision={this.deleteDecision} />
           <DecisionAdd addDecision={this.addDecision} />
           </div>
