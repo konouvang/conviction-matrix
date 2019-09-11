@@ -22,6 +22,7 @@ class DecisionAddChild extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <label>Add new decision item:</label>
                     <input type="text" onChange={this.handleChange} value={this.state.content} />
+                    <button>Add</button>
                 </form>
             </div>
         )
