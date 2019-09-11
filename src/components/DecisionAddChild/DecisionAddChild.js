@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 
-class DecisionAdd extends Component {
+class DecisionAddChild extends Component {
     state = {
         content: ''
     }
-    handleChange = (e) => {
+    handleChange = (event) => {
         this.setState({
-            content: e.target.value
+            content: event.target.value
         })
     }
-    handleSubmit = (e) => {
-        e.preventDefault();
+    handleSubmit = (event) => {
+        event.preventDefault();
         this.props.addDecision(this.state)
         this.setState({
             content: ''
@@ -28,4 +28,4 @@ class DecisionAdd extends Component {
     }
 }
 
-export default DecisionAdd
+export default DecisionAddChild

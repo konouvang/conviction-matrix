@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DecisionItemTwo = ({decisions, deleteDecision}) => {
+const DecisionItemChild = ({decisions, deleteDecision}) => {
 
   const decisionList = decisions.length ? (
     decisions.map(decisions => {
@@ -20,4 +20,4 @@ const DecisionItemTwo = ({decisions, deleteDecision}) => {
   )
 }
 
-export default DecisionItemTwo;
+export default DecisionItemChild;

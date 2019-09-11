@@ -12,7 +12,7 @@ import mapStateToProps from '../../redux/mapRedux/mapStateToProps';
 import './App.css';
 //pages
 import LandingPage from '../LandingPage/LandingPage';
-import DecisionInputRoot from '../DecisionInputRoot/DecisionInputRoot';
+import DecisionParent from '../DecisionParent/DecisionParent';
 import FactorParent from '../FactorParent/FactorParent';
 
 
@@ -57,7 +57,7 @@ class App extends Component {
                 <Route
                   exact
                   path="/decision"
-                  component={DecisionInputRoot}
+                  component={DecisionParent}
                 />
                 <Route
                   exact

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class FactorAddChild extends Component {
     state = {
-        combinedFactorWeight: {
+        factorsWeights: {
             factors: '',
             weight: ''
         }
@@ -12,14 +12,14 @@ class FactorAddChild extends Component {
         const inputValue = event.target.value;
         const propertyKey = event.target.getAttribute('name');
         this.setState({
-            combinedFactorWeight: {
-                ...this.state.combinedFactorWeight,
+            factorsWeights: {
+                ...this.state.factorsWeights,
                 [propertyKey]: inputValue,
             }
         });
     }
 
-    handleSubmit = (event) => {
+    saveInput = (event) => {
         event.preventDefault();
         this.props.addFactor(this.state)
         this.setState({
@@ -35,6 +35,7 @@ class FactorAddChild extends Component {
                     <label>Add new factor item:</label>
                     <input type="text" placeholder="Factor" onChange={this.handleChange} value={this.state.factors} name="factors" />
                     <input type="number" placeholder="Weight" onChange={this.handleChange} value={this.state.weight} name="weight" />
+                    <button>Add</button>
                 </form>
             </div>
         )

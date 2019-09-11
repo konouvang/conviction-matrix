@@ -13,7 +13,7 @@ class FactorParent extends Component {
     }
 
     deleteFactor = (id) => {
-        const factorsWeights = this.state.factors.filter(factor => {
+        const factorsWeights = this.state.factorsWeights.filter(factor => {
             return factor.id !== id
         });
         this.setState({

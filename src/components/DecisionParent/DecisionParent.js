@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStateToProps from '../../redux/mapRedux/mapStateToProps';
-import DecisionItemTwo from '../DecisionItemTwo/DecisionItemTwo';
-import DecisionAdd from '../DecisionAdd/DecisionAdd';
+import DecisionItemChild from '../DecisionItemChild/DecisionItemChild';
+import DecisionAddChild from '../DecisionAddChild/DecisionAddChild';
 
-class DecisionInputRoot extends Component {
+class DecisionParent extends Component {
     state = {
         decisions: [
             {id: 1, content: 'Stay'},
@@ -32,11 +32,11 @@ class DecisionInputRoot extends Component {
           <div>
           <h1>Decision Item</h1>
           <p>Decision Items are choices that this app is used for to help determine the best decision. There needs to be at least two.</p>
-          <DecisionItemTwo decisions={this.state.decisions} deleteDecision={this.deleteDecision} />
-          <DecisionAdd addDecision={this.addDecision} />
+          <DecisionItemChild decisions={this.state.decisions} deleteDecision={this.deleteDecision} />
+          <DecisionAddChild addDecision={this.addDecision} />
           </div>
         )
       }
 };
 
-export default connect(mapStateToProps)(DecisionInputRoot);
+export default connect(mapStateToProps)(DecisionParent);
