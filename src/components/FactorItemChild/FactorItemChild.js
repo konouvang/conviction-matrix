@@ -1,12 +1,12 @@
 import React from 'react'
 
-const FactorItemChild = ({factors, deleteFactor}) => {
+const FactorItemChild = ({factorsWeights, deleteFactor}) => {
 
-  const factorList = factors.length ? (
-    factors.map(factors => {
+  const factorList = factorsWeights.length ? (
+    factorsWeights.map(factorsWeights => {
       return (
-        <div key={factors.id}>
-          <button onClick={() => {deleteFactor(factors.id)}}>{factors.content}</button>
+        <div key={factorsWeights.id}>
+          <button onClick={() => {deleteFactor(factorsWeights.id)}}>`{factorsWeights.factors} {factorsWeights.weight}`</button>
         </div>
       )
     })

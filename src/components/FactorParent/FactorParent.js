@@ -6,23 +6,23 @@ import FactorAddChild from '../FactorAddChild/FactorAddChild';
 
 class FactorParent extends Component {
     state = {
-        factors: [
-            {id: 1, content: 'Expensive Relocation', weight: 7},
-            {id: 2, content: 'Higher paying job', weight: 9}
+        factorsWeights: [
+            {id: 1, factors: 'Expensive Relocation', weight: 7},
+            {id: 2, factors: 'Higher paying job', weight: 9}
         ]
     }
 
     deleteFactor = (id) => {
-        const factors = this.state.factors.filter(factor => {
+        const factorsWeights = this.state.factors.filter(factor => {
             return factor.id !== id
         });
         this.setState({
-            factors
+            factorsWeights
         })
       }
       addFactor = (factor) => {
         factor.id = Math.random()
-        let factors = [...this.state.factors, factor]
+        let factors = [...this.state.factorsWeights, factor]
         this.setState({
           factors
         })
@@ -34,7 +34,7 @@ class FactorParent extends Component {
           <p>Factors are what drives us to make decisions. For example, a factor for buying a new car may be its Resale Value, Gas
               Efficiency and Average Years in Use. There needs to be a minimum of one factor for you Decision Item.
           </p>
-          <FactorItemChild factors={this.state.factors} deleteFactor={this.deleteFactor} />
+          <FactorItemChild factorsWeights={this.state.factorsWeights} deleteFactor={this.deleteFactor} />
           <FactorAddChild addFactor={this.addFactor} />
           </div>
         )

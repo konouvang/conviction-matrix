@@ -2,27 +2,39 @@ import React, { Component } from 'react'
 
 class FactorAddChild extends Component {
     state = {
-        content: '',
-        weight: ''
+        combinedFactorWeight: {
+            factors: '',
+            weight: ''
+        }
     }
-    handleChange = (e) => {
+
+    handleChange = (event) => {
+        const inputValue = event.target.value;
+        const propertyKey = event.target.getAttribute('name');
         this.setState({
-            content: e.target.value
-        })
+            combinedFactorWeight: {
+                ...this.state.combinedFactorWeight,
+                [propertyKey]: inputValue,
+            }
+        });
     }
-    handleSubmit = (e) => {
-        e.preventDefault();
+
+    handleSubmit = (event) => {
+        event.preventDefault();
         this.props.addFactor(this.state)
         this.setState({
-            content: ''
+            factors: '',
+            weight: ''
         })
     }
+
     render(){
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>Add new factor item:</label>
-                    <input type="text" onChange={this.handleChange} value={this.state.content} />
+                    <input type="text" placeholder="Factor" onChange={this.handleChange} value={this.state.factors} name="factors" />
+                    <input type="number" placeholder="Weight" onChange={this.handleChange} value={this.state.weight} name="weight" />
                 </form>
             </div>
         )
