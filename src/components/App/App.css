@@ -1,0 +1,245 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+}
+
+/* ---------
+Alert
+- used to surface errors to the user
+-------------------------------------------------- */
+
+.alert {
+    background-color: #ff4545;
+    margin: 50px;
+}
+
+/* ---------
+Container
+- meant to add spacing around content
+-------------------------------------------------- */
+
+.container {
+    padding: 20px 20px 30px;
+}
+
+/* ---------
+Site
+- root level styling for the header, body, and footer
+- setup to allow the footer to remain affixed to the bottom of the window
+-------------------------------------------------- */
+
+.site {
+    display: flex;
+    height: 100%;
+    /* needed for IE10 */
+    min-height: 100%;
+    flex-direction: column;
+}
+
+.site-hd {
+    flex: 0 0 auto;
+}
+
+.site-bd {
+    flex: 1 0 auto;
+    position: relative;
+}
+
+/* ---------
+Field Set
+- form field styling including label
+-------------------------------------------------- */
+
+.fieldSet {
+    margin: 0;
+    display: block;
+}
+
+.fieldSet+.fieldSet {
+    margin-top: 10px;
+}
+
+.fieldSet-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
+.fieldSet-input {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* ---------
+Button
+- button styling for <button> tags and <input type="submit" />
+-------------------------------------------------- */
+
+.btn {
+    background-color: #00acb0;
+    border-radius: 4px;
+    color: #f8f8f8;
+    display: inline-block;
+    padding: 10px;
+    outline: 0;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.btn_sizeMin {
+    min-height: 50px;
+    min-width: 100px;
+}
+
+.btn_sizeFull {
+    display: block;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #008183;
+    text-decoration: none;
+}
+
+/* ---------
+Link Button
+- form field styling including label
+-------------------------------------------------- */
+
+/* This line makes the "Register" and "Login" buttons look like links */
+
+.link-button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    outline: 0;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+}
+
+/* ---------
+Vertical Rhythm
+- specifically meant to handle vertical spacing
+-------------------------------------------------- */
+
+.vr {
+    margin-bottom: 10px;
+}
+
+.vr_2x {
+    margin-bottom: 20px;
+}
+
+.vr_3x {
+    margin-bottom: 30px;
+}
+
+.vr_4x {
+    margin-bottom: 40px;
+}
+
+.text_alnCenter {
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.centersuitbtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f8f8f8;
+    border-radius: 6px;
+    color: black;
+    padding: 10px;
+    outline: 0;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.rootneedspage {
+    display: flex
+}
+
+.text_alnRight {
+    text-align: right;
+}
+
+.react-tel-input .flag-dropdown {
+    display: none;
+}
+
+.react-tel-input input[type=tel] {
+    padding-left: 0;
+}
+
+.space-right {
+    margin-right: 10px;
+}
+
+tbody tr.MuiTableRow-root:nth-child(odd){
+    background-color: #f7f7f7;
+}
+
+.gridTable{
+    border: 1px solid rgba(224, 224, 224, 1);
+    background-color: white;
+}
+
+.gridTable-row{
+    border-top: 1px solid rgba(224, 224, 224, 1);
+    padding: 15px;
+}
+
+.gridTable-row:nth-child(even){
+    background-color: #f7f7f7;
+}
+
+.breakWord{
+    overflow-wrap: break-word;
+}
+
+@media(min-width: 600px) and (max-width: 960px){
+    .gridTable-row-col {
+        border-left: 1px solid rgba(224, 224, 224, 1);
+        text-align: center;
+    }
+}
+
+@media(max-width: 960px){
+    .gridTable-row_smHide{
+        display: none;
+    }
+
+    .showOnlyLg{
+        display: none;
+    }
+}
+
+@media(min-width: 960px) {
+    .showOnlyMobile {
+        display: none;
+    }
+
+    .gridTable-row {
+        padding: 5px;
+    }
+}

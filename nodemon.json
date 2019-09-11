@@ -1,0 +1,11 @@
+{
+    "restartable": "rs",
+    "ext": "js,ts,html",
+    "ignore": [
+        "src"
+    ],
+    "watch": [
+        "./server",
+        "server.ts"
+    ]
+}
