@@ -1,5 +1,6 @@
 import { all } from 'redux-saga/effects';
 import decisionItemSaga from './decisionItem.saga';
+import factorWeightSaga from './factorWeight.saga';
 
 
 // rootSaga is the primary saga.
@@ -12,6 +13,6 @@ import decisionItemSaga from './decisionItem.saga';
 export default function* rootSaga() {
   yield all([
     decisionItemSaga(),
-
+    factorWeightSaga(),
   ]);
 }

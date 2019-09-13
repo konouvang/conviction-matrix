@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import decisionItemReducer from './decisionItem.reducer';
+import factorWeightReducer from './factorWeight.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -9,6 +10,7 @@ import decisionItemReducer from './decisionItem.reducer';
 // This is what we get when we use 'state' inside of 'mapStateToProps'
 const rootReducer = combineReducers({
     decisionItemReducer,
+    factorWeightReducer,
 });
 
 export default rootReducer;

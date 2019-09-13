@@ -23,6 +23,10 @@ class FactorAddChild extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        this.props.dispatch({
+            type: 'SET_FACTOR_WEIGHT',
+            payload: this.state.gentInfo
+        });
         this.props.addScore(this.state)
         this.setState({
             factors: '',
