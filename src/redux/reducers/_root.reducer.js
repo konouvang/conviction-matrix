@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-
+import decisionItemReducer from './decisionItem.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -8,7 +8,7 @@ import { combineReducers } from 'redux';
 // Lets make a bigger object for our store, with the objects from our reducers.
 // This is what we get when we use 'state' inside of 'mapStateToProps'
 const rootReducer = combineReducers({
-  
+    decisionItemReducer,
 });
 
 export default rootReducer;

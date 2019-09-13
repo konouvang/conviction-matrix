@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import mapStateToProps from '../../redux/mapRedux/mapStateToProps';
 
 class DecisionAddChild extends Component {
     state = {
@@ -11,6 +13,10 @@ class DecisionAddChild extends Component {
     }
     handleSubmit = (event) => {
         event.preventDefault();
+        this.props.dispatch({
+            type: 'SET_DECISION',
+            payload: this.state.gentInfo
+        });
         this.props.addDecision(this.state)
         this.setState({
             content: ''
@@ -29,4 +35,4 @@ class DecisionAddChild extends Component {
     }
 }
 
-export default DecisionAddChild
+export default connect(mapStateToProps)(DecisionAddChild);
