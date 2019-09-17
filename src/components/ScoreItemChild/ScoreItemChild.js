@@ -1,12 +1,12 @@
 import React from 'react'
 
-const ScoreItemChild = ({score, deleteScore}) => {
+const ScoreItemChild = ({scores, deleteScore}) => {
 
-  const scoreList = score.length ? (
-    score.map(score => {
+  const scoreList = scores.length ? (
+    scores.map(scores => {
       return (
-        <div key={score.id}>
-          <button onClick={() => {deleteScore(score.id)}}>`{score.content}`</button>
+        <div key={scores.id}>
+          <button onClick={() => {deleteScore(scores.id)}}>`{scores.content}`</button>
         </div>
       )
     })

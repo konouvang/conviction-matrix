@@ -14,6 +14,7 @@ import './App.css';
 import LandingPage from '../LandingPage/LandingPage';
 import DecisionParent from '../DecisionParent/DecisionParent';
 import FactorParent from '../FactorParent/FactorParent';
+import ScoreParent from '../ScoreParent/ScoreParent';
 
 
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
@@ -63,6 +64,11 @@ class App extends Component {
                   exact
                   path="/factor"
                   component={FactorParent}
+                />
+                <Route
+                  exact
+                  path="/score"
+                  component={ScoreParent}
                 />
 
                 {/* If none of the other routes matched, we will show a 404. */}

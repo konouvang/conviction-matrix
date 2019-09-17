@@ -29,7 +29,7 @@ class FactorParent extends Component {
     }
 
     goToInfo = (event) => {
-      this.props.history.push('/factor');
+      this.props.history.push('/score');
     }
       render() {
         return (

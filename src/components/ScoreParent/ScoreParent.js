@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStateToProps from '../../redux/mapRedux/mapStateToProps';
-import ScoreItemChild from '../ScoreItemChild/ScoreItemChild'
+import ScoreItemChild from '../ScoreItemChild/ScoreItemChild';
+import ScoreAddChild from '../ScoreAddChild/ScoreAddChild';
 
 class ScoreParent extends Component {
     state = {
@@ -11,18 +12,18 @@ class ScoreParent extends Component {
     }
 
     deleteScore = (id) => {
-        const scores = this.state.scores.filter(factor => {
-            return factor.id !== id
+        const scores = this.state.scores.filter(score => {
+            return score.id !== id
         });
         this.setState({
             scores
         })
       }
-      addScore = (factor) => {
-        factor.id = Math.random()
-        let factors = [...this.state.scores, factor]
+      addScore = (score) => {
+        score.id = Math.random()
+        let scores = [...this.state.scores, score]
         this.setState({
-          factors
+          scores
         })
       }
       render() {
@@ -35,7 +36,7 @@ class ScoreParent extends Component {
               best decision is.
           </p>
           <ScoreItemChild scores={this.state.scores} deleteScore={this.deleteScore} />
-          <FactorAddChild addScore={this.addScore} />
+          <ScoreAddChild addScore={this.addScore} />
           </div>
         )
       }
