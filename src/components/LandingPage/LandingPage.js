@@ -7,7 +7,7 @@ import { Paper, Typography, Button, Box, Grid, Container } from '@material-ui/co
 
 class LandingPage extends Component {
     goToInfo = (event) => {
-        this.props.history.push('/info');
+        this.props.history.push('/decision');
     }
 
     render() {

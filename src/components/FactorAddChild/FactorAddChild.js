@@ -1,30 +1,55 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import mapStateToProps from '../../redux/mapRedux/mapStateToProps';
 
 class FactorAddChild extends Component {
     state = {
         factorsWeights: {
             factors: '',
-            weight: ''
+            weight: 0
         }
     }
 
-    handleChange = (event) => {
-        const inputValue = event.target.value;
-        const propertyKey = event.target.getAttribute('name');
+    //// Konou Note - Cannot seem to store inputs into state - Ask Scott or Myron for help ********
+
+    // handleChange = (event) => {
+    //     const inputValue = event.target.value;
+    //     const propertyKey = event.target.getAttribute('name');
+    //     console.log('propertyKey', propertyKey);
+    //     console.log('inputValue', inputValue);
+    //     this.setState({
+    //         factorsWeights: {
+    //             ...this.state.factorsWeights,
+    //             [propertyKey]: inputValue,
+    //         }
+    //     });
+    // }
+
+    handleChange = (dataname) => (event, something) => {
+        let finalValue = event;
+        if (event.target) {
+            finalValue = event.target.value
+        }
         this.setState({
             factorsWeights: {
                 ...this.state.factorsWeights,
-                [propertyKey]: inputValue,
+                [dataname]: finalValue
             }
         });
     }
 
-    saveInput = (event) => {
+    handleSubmit = (event) => {
         event.preventDefault();
+        this.props.dispatch({
+            type: 'SET_FACTOR_WEIGHT',
+            payload: this.state.factorsWeights
+        });
         this.props.addFactor(this.state)
         this.setState({
-            factors: '',
-            weight: ''
+            factorsWeights: {
+                factors: '',
+                weight: ''
+            }
         })
     }
 
@@ -42,4 +67,4 @@ class FactorAddChild extends Component {
     }
 }
 
-export default FactorAddChild
+export default connect(mapStateToProps)(FactorAddChild)

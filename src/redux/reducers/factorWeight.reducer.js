@@ -7,4 +7,4 @@ const factorWeightReducer = (state = [], action) => {
     }
   };
 
-  export default factorWeightItemReducer;
+  export default factorWeightReducer;

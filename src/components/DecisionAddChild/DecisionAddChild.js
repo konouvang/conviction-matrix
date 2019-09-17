@@ -15,7 +15,7 @@ class DecisionAddChild extends Component {
         event.preventDefault();
         this.props.dispatch({
             type: 'SET_DECISION',
-            payload: this.state.gentInfo
+            payload: this.state.content
         });
         this.props.addDecision(this.state)
         this.setState({

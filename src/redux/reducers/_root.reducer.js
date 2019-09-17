@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import decisionItemReducer from './decisionItem.reducer';
 import factorWeightReducer from './factorWeight.reducer';
+import scoreReducer from './score.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -11,6 +12,7 @@ import factorWeightReducer from './factorWeight.reducer';
 const rootReducer = combineReducers({
     decisionItemReducer,
     factorWeightReducer,
+    scoreReducer,
 });
 
 export default rootReducer;
