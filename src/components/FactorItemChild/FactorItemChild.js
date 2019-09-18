@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
+import mapStateToProps from '../../redux/mapRedux/mapStateToProps';
+
 
 const FactorItemChild = ({factorsWeights, deleteFactor}) => {
 
@@ -20,4 +23,4 @@ const FactorItemChild = ({factorsWeights, deleteFactor}) => {
   )
 }
 
-export default FactorItemChild;
+export default connect(mapStateToProps)(FactorItemChild);
