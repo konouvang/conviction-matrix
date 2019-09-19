@@ -4,10 +4,9 @@ import mapStateToProps from '../../redux/mapRedux/mapStateToProps';
 
 class FactorAddChild extends Component {
     state = {
-        factorsWeights: {
-            factors: '',
-            weight: 0
-        }
+        factors: '',
+        weight: 0
+
     }
 
     //// Konou Note - Cannot seem to store inputs into state - Ask Scott or Myron for help ********
@@ -18,11 +17,20 @@ class FactorAddChild extends Component {
         console.log('propertyKey', propertyKey);
         console.log('inputValue', inputValue);
         this.setState({
-            factorsWeights: {
-                ...this.state.factorsWeights,
-                [propertyKey]: inputValue,
-            }
+            
         });
+    }
+
+    handleChangeFactor = (event) => {
+        this.setState({
+            factors: event.target.value
+        })
+    }
+
+    handleChangeWeight = (event) => {
+        this.setState({
+            weight: event.target.value
+        })
     }
 
     /////Konou Note - Tried two different handleChange method and both do not work, will come back to it
@@ -60,8 +68,8 @@ class FactorAddChild extends Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>Add new factor item:</label>
-                    <input type="text" placeholder="Factor" onChange={this.handleChange} value={this.state.factors} name="factors" />
-                    <input type="number" placeholder="Weight" onChange={this.handleChange} value={this.state.weight} name="weight" />
+                    <input type="text" placeholder="Factor" onChange={this.handleChangeFactor} value={this.state.factors} name="factors" />
+                    <input type="number" placeholder="Weight" onChange={this.handleChangeWeight} value={this.state.weight} name="weight" />
                     <button>Add</button>
                 </form>
             </div>

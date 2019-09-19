@@ -9,7 +9,11 @@ class FactorParent extends Component {
         factorsWeights: [
             {id: 1, factors: 'Expensive Relocation', weight: 7},
             {id: 2, factors: 'Higher paying job', weight: 9}
-        ]
+        ],
+        id: 0,
+        factors: '',
+        weight: 0,
+
     }
 
     deleteFactor = (id) => {
@@ -20,13 +24,23 @@ class FactorParent extends Component {
             factorsWeights
         })
       }
-    addFactor = (factor) => {
-      factor.id = Math.random()
-      let factors = [...this.state.factorsWeights, factor]
+    // addFactor = (factor => {
+    //   factor.id = Math.random()
+    //   let factors = [...this.state.factorsWeights, factor]
+    //   this.setState({
+    //     factors
+    //   })
+    // }
+
+    addFactor = (choice) => {
+      choice.id = Math.random()
+      let factorsWeights = [...this.state.factorsWeights, choice]
       this.setState({
-        factors
+        factorsWeights
       })
     }
+
+
 
     goToInfo = (event) => {
       this.props.history.push('/score');
