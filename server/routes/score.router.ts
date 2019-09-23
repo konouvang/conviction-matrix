@@ -14,44 +14,43 @@ let router = express.Router();
 let mongoose = require("mongoose");
 
 // Defines HOW Documents will be saved to the Database
-let WeightFactorSchema = mongoose.Schema({
-    factor : String,
-    weight : Number,
+let ScoreSchema = mongoose.Schema({
+    score : Number,
   });
 
-let WeightFactor = mongoose.model("WeightFactor", WeightFactorSchema);
+let Score = mongoose.model("Score", ScoreSchema);
 
 
-  //GET factorWeights
+  //GET scores
 router.get("/", (req: Request, res: Response): void => {
-    //Get all factorWeights
-    WeightFactor.find(function(err, allWeightFactor){
+    //Get all scores
+    Score.find(function(err, allScore){
       if(err){
         console.log(err);
         res.sendStatus(500);
       }
-      res.send(allWeightFactor);
+      res.send(allScore);
     });
   });
 
-  //Save a new factorWeight
+  //Save a new score
 router.post("/", (req: Request, res: Response): void => {
     //Instance of the Model to be saved to the database
-    let factorWeight = new WeightFactor();
-    factorWeight.save(function(err, savedWeightFactor){
+    let score = new Score();
+    score.save(function(err, savedScore){
       if(err){
         console.log(err);
         res.sendStatus(500);
       }
-      res.send(savedWeightFactor);
+      res.send(savedScore);
     });
   });
 
   router.delete("/", (req: Request, res: Response) => {
-    //Delete a factorWeight
+    //Delete a score
     // { "id" : "83275019375918538?"}
     var id = req.body.id;
-    WeightFactor.findByIdAndRemove(id, function(err, deletedWeightFactor){
+    Score.findByIdAndRemove(id, function(err, deletedScore){
       /*
         if(undefined){} - False Value
         if("Some Error Code"){} - True Value
@@ -62,10 +61,10 @@ router.post("/", (req: Request, res: Response): void => {
         res.sendStatus(500);
       }
   
-      res.send(deletedWeightFactor);
+      res.send(deletedScore);
     });
   });
 
 
   
-export default router;
+export default router;  
