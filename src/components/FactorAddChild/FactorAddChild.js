@@ -9,18 +9,6 @@ class FactorAddChild extends Component {
 
     }
 
-    //// Konou Note - Cannot seem to store inputs into state - Ask Scott or Myron for help ********
-
-    handleChange = (event) => {
-        const inputValue = event.target.value;
-        const propertyKey = event.target.getAttribute('name');
-        console.log('propertyKey', propertyKey);
-        console.log('inputValue', inputValue);
-        this.setState({
-            
-        });
-    }
-
     handleChangeFactor = (event) => {
         this.setState({
             factors: event.target.value
@@ -32,21 +20,6 @@ class FactorAddChild extends Component {
             weight: event.target.value
         })
     }
-
-    /////Konou Note - Tried two different handleChange method and both do not work, will come back to it
-
-    // handleChange = (dataname) => (event, something) => {
-    //     let finalValue = event;
-    //     if (event.target) {
-    //         finalValue = event.target.value
-    //     }
-    //     this.setState({
-    //         factorsWeights: {
-    //             ...this.state.factorsWeights,
-    //             [dataname]: finalValue
-    //         }
-    //     });
-    // }
 
     handleSubmit = (event) => {
         event.preventDefault();

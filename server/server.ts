@@ -10,12 +10,6 @@ import measurementsRouter from './routes/measurements.router';
 import resourcesRouter from './routes/resources.router';
 import needRouter from './routes/need.router';
 import infoRouter from './routes/info.router';
-import twilioRouter from './routes/twilio.router';
-
-// TEST
-import googlecal from './routes/googlecalendar.router';
-
-import { textGentleman } from './modules/textGentleman';
 
 require('dotenv').config();
 
@@ -41,9 +35,7 @@ app.use('/api/measurements', measurementsRouter);
 app.use('/api/info', infoRouter);
 app.use('/api/resources', resourcesRouter);
 app.use('/api/need', needRouter);
-app.use('/api/twilio', twilioRouter);
 
-app.use('/googlecal', googlecal);
 
 // Serve static files
 app.use(express.static('build'));

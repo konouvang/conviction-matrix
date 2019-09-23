@@ -24,13 +24,6 @@ class FactorParent extends Component {
             factorsWeights
         })
       }
-    // addFactor = (factor => {
-    //   factor.id = Math.random()
-    //   let factors = [...this.state.factorsWeights, factor]
-    //   this.setState({
-    //     factors
-    //   })
-    // }
 
     addFactor = (choice) => {
       choice.id = Math.random()
