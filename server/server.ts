@@ -12,6 +12,7 @@ import passport from './strategies/user.strategy';
 // import infoRouter from './routes/info.router';
 import decisionItemRouter from './routes/decisionItem.router';
 import factorWeightRouter from './routes/factorWeight.router';
+import scoreRouter from './routes/score.router';
 
 require('dotenv').config();
 
@@ -39,6 +40,7 @@ app.use(passport.session());
 // app.use('/api/need', needRouter);
 app.use('/api/decision', decisionItemRouter);
 app.use('/api/factor', factorWeightRouter);
+app.use('/api/score', scoreRouter);
 
 
 // Serve static files
