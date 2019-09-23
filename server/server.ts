@@ -11,6 +11,7 @@ import adminRouter from './routes/admin.router';
 // import needRouter from './routes/need.router';
 // import infoRouter from './routes/info.router';
 import decisionItemRouter from './routes/decisionItem.router';
+import factorWeightRouter from './routes/factorWeight.router';
 
 require('dotenv').config();
 
@@ -37,6 +38,7 @@ app.use('/api/admin', adminRouter);
 // app.use('/api/resources', resourcesRouter);
 // app.use('/api/need', needRouter);
 app.use('/api/decision', decisionItemRouter);
+app.use('/api/factor', factorWeightRouter);
 
 
 // Serve static files
